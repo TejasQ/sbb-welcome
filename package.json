@@ -1,0 +1,27 @@
+{
+  "name": "saddleback-berlin-welcome",
+  "version": "1.0.0",
+  "description": "An app to serve newcomers to Saddleback Church in Berlin.",
+  "main": "index.js",
+  "author": "Tejas Kumar <hello@tej.as>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.8.0",
+    "eslint-config-fbjs": "^2.0.0",
+    "flow-bin": "^0.56.0",
+    "jest": "^21.2.1",
+    "prettier": "^1.7.4",
+    "react-hot-loader": "^3.0.0",
+    "webpack": "^3.7.1",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
