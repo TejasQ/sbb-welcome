@@ -17,6 +17,7 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -38,13 +39,21 @@
     "webpack": "^3.7.1",
     "webpack-dev-server": "^2.9.1"
   },
+  "peerDependencies": {
+    "glamor": "latest",
+    "glamorous": "latest",
+    "react": "latest"
+  },
   "dependencies": {
     "glamor": "^2.20.40",
     "glamorous": "^4.9.7",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-transition-group": "^2.2.1",
+    "redux": "^3.7.2",
     "regenerator-runtime": "^0.11.0"
   }
 }
