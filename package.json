@@ -10,7 +10,7 @@
     "start": "webpack-dev-server",
     "lint": "eslint ./src/**/*.{js,jsx} --fix",
     "prettier": "prettier ./src/**/*.{js,jsx} --write",
-    "precommit": "npm run lint && npm run prettier && npm run test"
+    "precommit": "npm run lint && npm run prettier && npm run test && git add ."
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
