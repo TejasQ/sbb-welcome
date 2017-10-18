@@ -7,7 +7,7 @@ import homeSlides from "./homeSlides"
 class HomePage extends React.Component {
   state = {
     activeHomeSlide: 0,
-    timeout: 5000,
+    timeout: 5000
   }
 
   updateActiveHomeSlide() {
@@ -15,7 +15,7 @@ class HomePage extends React.Component {
       prevState =>
         this.state.activeHomeSlide === homeSlides.length - 1
           ? { activeHomeSlide: 0 }
-          : { activeHomeSlide: prevState.activeHomeSlide + 1 },
+          : { activeHomeSlide: prevState.activeHomeSlide + 1 }
     )
   }
 
@@ -31,7 +31,7 @@ class HomePage extends React.Component {
             button={{
               ...slide.button,
               onTimeout: () => this.updateActiveHomeSlide(),
-              timeout: this.state.timeout,
+              timeout: this.state.timeout
             }}
           >
             {slide.text}
@@ -45,7 +45,7 @@ class HomePage extends React.Component {
 const style = () => ({
   position: "relative",
   width: "100%",
-  height: "100%",
+  height: "100%"
 })
 
 export default glamorous(HomePage)(style)

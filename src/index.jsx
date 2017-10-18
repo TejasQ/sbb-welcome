@@ -15,5 +15,5 @@ hydrate(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.querySelector("#app"),
+  document.querySelector("#app")
 )

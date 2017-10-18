@@ -23,5 +23,5 @@ const App = ({ left, right, leftSize }) => {
 }
 
 export default connect(({ currentView }) => ({
-  ...currentView,
+  ...currentView
 }))(App)

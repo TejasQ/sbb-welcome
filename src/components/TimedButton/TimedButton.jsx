@@ -13,7 +13,7 @@ const defaultTimeout = 5000,
     fontWeight: "bold",
 
     "&:active": {
-      transform: "scale(0.9)",
+      transform: "scale(0.9)"
     },
 
     ":before": {
@@ -26,8 +26,8 @@ const defaultTimeout = 5000,
       opacity: 0.4,
       backgroundColor: color,
       transform: "translateX(-100%)",
-      animation: `${resetTransform} ${duration}ms forwards linear`,
-    },
+      animation: `${resetTransform} ${duration}ms forwards linear`
+    }
   })
 
 class TimedButton extends React.Component {

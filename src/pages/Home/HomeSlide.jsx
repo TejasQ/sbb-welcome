@@ -30,23 +30,23 @@ const duration = 600,
     color: "white",
     "&.entering, &.exiting": {
       transform: "translateY(50px)",
-      opacity: 0,
+      opacity: 0
     },
     "&.entered": {
       transform: "none",
-      opacity: 1,
+      opacity: 1
     },
     "& .text": {
       position: "relative",
       fontSize: 26,
       lineHeight: 1,
-      fontWeight: 300,
+      fontWeight: 300
     },
     "& .button": {
       position: "fixed",
       bottom: theme.spacing * 4,
-      right: theme.spacing * 4,
-    },
+      right: theme.spacing * 4
+    }
   })
 
 export default glamorous(HomeSlide)(style)

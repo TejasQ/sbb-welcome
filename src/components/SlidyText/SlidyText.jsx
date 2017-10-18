@@ -23,23 +23,23 @@ const defaultDuration = 1,
   },
   style = ({ duration = defaultDuration, direction = "forwards", easing = "ease" }) => ({
     "& .SlidyText": {
-      overflow: "hidden",
+      overflow: "hidden"
     },
     "& .SlidyText > h1": {
-      animation: `${resetTransform} ${duration}s ${easing} ${direction}`,
+      animation: `${resetTransform} ${duration}s ${easing} ${direction}`
     },
     "& .SlidyText_up": {
-      transform: "translateY(100%)",
+      transform: "translateY(100%)"
     },
     "& .SlidyText_down": {
-      transform: "translateY(-100%)",
+      transform: "translateY(-100%)"
     },
     "& .SlidyText_right": {
-      transform: "translateX(-100%)",
+      transform: "translateX(-100%)"
     },
     "& .SlidyText_left": {
-      transform: "translateX(100%)",
-    },
+      transform: "translateX(100%)"
+    }
   })
 
 export default glamorous(SlidyText)(style)

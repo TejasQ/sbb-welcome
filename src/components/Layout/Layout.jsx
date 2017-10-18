@@ -15,15 +15,15 @@ const Layout = ({ className, left, right }) => (
 
     "& .left": {
       width: leftSize,
-      transition: "width .6s ease",
+      transition: "width .6s ease"
     },
 
     "& .right": {
       position: "relative",
       display: "flex",
       flex: "1 1 auto",
-      alignItems: "center",
-    },
+      alignItems: "center"
+    }
   })
 
 export default glamorous(Layout)(style)

@@ -21,8 +21,8 @@ const HomeLeft = ({ className }) => (
     WebkitBackdropFilter: "blur(80px) saturate(150%) brightness(130%)",
 
     "&.entered": {
-      transform: "none",
-    },
+      transform: "none"
+    }
   })
 
 export default glamorous(HomeLeft)(styles)

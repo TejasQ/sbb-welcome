@@ -1,8 +1,8 @@
 export default (
   state = {
-    sidebar: true,
+    sidebar: true
   },
-  action,
+  action
 ) => {
   switch (action.type) {
     case "HOME_PAGE_HIDE_SIDEBAR":

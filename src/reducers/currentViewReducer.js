@@ -6,9 +6,9 @@ export default (
     left: HomeLeft,
     right: HomeRight,
     leftSize: 0,
-    isViewChanging: false,
+    isViewChanging: false
   },
-  action,
+  action
 ) => {
   switch (action.type) {
     case "UPDATE_VIEW":
