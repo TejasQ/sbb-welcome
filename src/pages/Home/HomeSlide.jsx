@@ -43,7 +43,7 @@ const duration = 600,
       fontWeight: 300
     },
     "& .button": {
-      position: "fixed",
+      position: "absolute",
       bottom: theme.spacing * 4,
       right: theme.spacing * 4
     }

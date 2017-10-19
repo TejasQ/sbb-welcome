@@ -1,27 +1,43 @@
 import React from "react"
-import { connect } from "react-redux"
-import { ThemeProvider } from "glamorous"
+import glamorous, { ThemeProvider } from "glamorous"
 
 import theme from "./theme"
-import Layout from "components/Layout/Layout"
 
 import applyGlobalFonts from "./utils/apply-global-fonts"
 import applyGlobalStyles from "./utils/apply-global-styles"
 
+import Sidebar from "components/Sidebar/Sidebar"
+import Home from "./pages/Home/HomeRight"
+
 applyGlobalStyles()
 applyGlobalFonts()
 
-const App = ({ left, right, leftSize }) => {
-  const Left = left,
-    Right = right
-
-  return (
+const App = ({ className }) => (
     <ThemeProvider theme={theme}>
-      <Layout leftSize={leftSize} left={<Left />} right={<Right />} />
+      <div className={className}>
+        <Sidebar />
+        <Home />
+      </div>
     </ThemeProvider>
-  )
-}
+  ),
+  style = {
+    position: "relative",
+    width: 1024,
+    height: 768,
+    margin: "0 auto",
+    ":after": {
+      content: "''",
+      position: "absolute",
+      top: -59,
+      left: -391,
+      zIndex: -1,
+      width: 1804,
+      height: 898,
+      overflow: "visible",
+      backgroundImage: "url('https://maquette.pro/wp-content/uploads/2016/08/3-22.jpg')",
+      backgroundPosition: "center",
+      backgroundSize: "cover"
+    }
+  }
 
-export default connect(({ currentView }) => ({
-  ...currentView
-}))(App)
+export default glamorous(App)(style)

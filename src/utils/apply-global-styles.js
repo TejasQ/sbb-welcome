@@ -13,6 +13,14 @@ export default () => {
     boxSizing: "border-box"
   })
 
+  css.global("body", {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100vw",
+    height: "100vh"
+  })
+
   css.global("h1, h2, h3, h4, h5, h6, p", { margin: 0 })
   css.global("h1", { fontWeight: 600 })
 }
