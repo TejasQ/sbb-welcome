@@ -2,7 +2,7 @@ import React from "react"
 import Transition from "react-transition-group/Transition"
 import glamorous from "glamorous"
 
-import SlidyText from "components/SlidyText/SlidyText"
+import Slidy from "components/Slidy/Slidy"
 import TimedButton from "components/TimedButton/TimedButton"
 
 const duration = 600,
@@ -10,7 +10,7 @@ const duration = 600,
     <Transition unmountOnExit={true} in={status} timeout={duration}>
       {animationStatus => (
         <div className={`${className} ${animationStatus}`}>
-          <SlidyText className="text">{children}</SlidyText>
+          <Slidy className="text">{children}</Slidy>
           <TimedButton className="button" color="white" {...button} />
         </div>
       )}

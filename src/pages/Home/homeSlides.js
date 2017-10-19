@@ -5,7 +5,7 @@ export default [
   {
     id: 1,
     backgroundImage: "url('/img/home-slides/berlin.jpg')",
-    text: ["Sharing the love of Jesus", "in Berlin, and around", "the world."],
+    text: [<h1>Sharing the love of Jesus</h1>, <h1>in Berlin, and around</h1>, <h1>the world.</h1>],
     button: {
       children: "Learn More",
     },
@@ -13,7 +13,7 @@ export default [
   {
     id: 3,
     backgroundImage: "url('/img/home-slides/frisbee.jpg')",
-    text: ["Church is home.", "Church is friends.", "Church is family."],
+    text: [<h1>Church is home.</h1>, <h1>Church is friends.</h1>, <h1>Church is family.</h1>],
     button: {
       children: "See Events",
     },
@@ -21,7 +21,7 @@ export default [
   {
     id: 4,
     backgroundImage: "url('/img/home-slides/small-group.jpg')",
-    text: ["Church life happens", "in circles, not in rows."],
+    text: [<h1>Church life happens</h1>, <h1>in circles, not in rows.</h1>],
     button: {
       children: "Explore Small Groups",
     },
@@ -29,7 +29,7 @@ export default [
   {
     id: 2,
     backgroundImage: "url('img/home-slides/minister.jpg')",
-    text: ["Mitmachgemeinde", "Every member is a", "minister."],
+    text: [<h1>Mitmachgemeinde</h1>, <h1>Every member is a</h1>, <h1>minister.</h1>],
     button: {
       children: "Get Involved",
     },
