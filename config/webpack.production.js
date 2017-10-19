@@ -5,6 +5,7 @@ const { resolve } = require("path")
 module.exports = {
   ...baseConfig,
   plugins: [
+    ...baseConfig.pluigins,
     new CopyWebpackPlugin([
       {
         from: resolve(__dirname, "..", "public", "img"),
