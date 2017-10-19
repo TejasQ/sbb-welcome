@@ -9,7 +9,7 @@ const defaultTimeout = 5000,
     padding: theme.spacing / 2,
     border: `2px solid ${theme.colors[color] || color || "black"}`,
     overflow: "hidden",
-    transition: ".15s transform ease",
+    transition: ".1s transform ease",
     fontWeight: "bold",
 
     "&:active": {

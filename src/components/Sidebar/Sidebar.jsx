@@ -64,8 +64,13 @@ const Sidebar = ({ className, compact }) => (
       padding: theme.spacing,
       borderTop: "1px solid rgba(0, 0, 0, 0.2)",
       fontWeight: 600,
+      transition: "background-color .15s ease",
       backgroundColor: "rgba(255, 255, 255, 0.2)",
       color: "white"
+    },
+
+    "& .menu__link:active": {
+      backgroundColor: "rgba(255, 255, 255, 0.5)"
     }
   })
 
