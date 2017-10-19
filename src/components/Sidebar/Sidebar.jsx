@@ -1,14 +1,15 @@
 import React from "react"
 import glamorous from "glamorous"
+import { connect } from "react-redux"
 
 import Transition from "react-transition-group/Transition"
 
 import Slidy from "components/Slidy/Slidy"
 
-const Sidebar = ({ className }) => (
+const Sidebar = ({ className, compact }) => (
     <Transition in={true} appear={true} timeout={600}>
       {animationState => (
-        <div className={`${className} ${animationState}`}>
+        <div className={`${className} ${animationState}${compact ? " compact" : ""}`}>
           <div className="logo">
             <img alt="Saddleback" src="/img/logo.png" />
           </div>
@@ -40,10 +41,23 @@ const Sidebar = ({ className }) => (
     background: "rgba(0, 0, 0, 0.2)",
     WebkitBackdropFilter: "blur(80px) saturate(150%) brightness(130%)",
 
+    "&.entered": {
+      transform: "none"
+    },
+
+    "&.compact": {
+      transform: `translateX(${(theme.sidebarWidth - 60) * -1}px)`
+    },
+
     "& .logo img": {
       display: "block",
       margin: "100px auto",
-      maxWidth: 75
+      maxWidth: 75,
+      transition: "transform .6s ease"
+    },
+
+    "&.compact .logo img": {
+      transform: `scale(0.5) translateX(${theme.sidebarWidth - 60}px)`
     },
 
     "& .menu__link": {
@@ -52,11 +66,7 @@ const Sidebar = ({ className }) => (
       fontWeight: 600,
       backgroundColor: "rgba(255, 255, 255, 0.2)",
       color: "white"
-    },
-
-    "&.entered": {
-      transform: "none"
     }
   })
 
-export default glamorous(Sidebar)(styles)
+export default connect(({ sidebar }) => ({ ...sidebar }))(glamorous(Sidebar)(styles))

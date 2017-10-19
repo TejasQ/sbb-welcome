@@ -23,7 +23,14 @@ const App = ({ className }) => (
     </ThemeProvider>
   ),
   style = () => ({
-    width: "100vw"
+    width: "100vw",
+    "& h1": {
+      fontWeight: 600,
+      fontSize: 50,
+      "@media (min-width: 1366px)": {
+        fontSize: 70
+      }
+    }
   })
 
 export default glamorous(App)(style)

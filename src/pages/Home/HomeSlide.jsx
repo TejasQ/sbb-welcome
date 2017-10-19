@@ -6,10 +6,10 @@ import Slidy from "components/Slidy/Slidy"
 import TimedButton from "components/TimedButton/TimedButton"
 
 const duration = 600,
-  HomeSlide = ({ button = {}, status, className, children }) => (
+  HomeSlide = ({ button = {}, status, className, compact, children }) => (
     <Transition unmountOnExit={true} in={status} timeout={duration}>
       {animationStatus => (
-        <div className={`${className} ${animationStatus}`}>
+        <div className={`${className} ${animationStatus}${compact && "compact"}`}>
           <Slidy className="text">{children}</Slidy>
           <TimedButton className="button" color="white" {...button} />
         </div>
