@@ -4,7 +4,7 @@ import HomeSlide from "./HomeSlide"
 export default [
   {
     id: 1,
-    backgroundImage: "url('https://c1.staticflickr.com/8/7430/10823635396_9b3c83000e_b.jpg')",
+    backgroundImage: "url('/img/home-slides/berlin.jpg')",
     text: ["Sharing the love of Jesus", "in Berlin, and around", "the world."],
     button: {
       children: "Learn More",
@@ -12,8 +12,7 @@ export default [
   },
   {
     id: 3,
-    backgroundImage:
-      "url('https://scontent-frx5-1.xx.fbcdn.net/v/t31.0-8/18766585_1486920251370335_4049768328159720951_o.jpg?oh=f7f9cfe904f5a7a52bc28541ec4fcab0&oe=5A681945')",
+    backgroundImage: "url('/img/home-slides/frisbee.jpg')",
     text: ["Church is home.", "Church is friends.", "Church is family."],
     button: {
       children: "See Events",
@@ -21,8 +20,7 @@ export default [
   },
   {
     id: 4,
-    backgroundImage:
-      "url('https://blog.faithlifecdn.com/wp-content/uploads/2014/08/lightstock-31979-medium-logos-bible-software.jpg')",
+    backgroundImage: "url('/img/home-slides/small-group.jpg')",
     text: ["Church life happens", "in circles, not in rows."],
     button: {
       children: "Explore Small Groups",
@@ -30,8 +28,7 @@ export default [
   },
   {
     id: 2,
-    backgroundImage:
-      "url('https://scontent-frx5-1.xx.fbcdn.net/v/t31.0-8/21743815_1596178757111150_7043776700111911691_o.jpg?oh=f0a1c66440df7713aa5ba3ee8bfddcc2&oe=5A719C2A')",
+    backgroundImage: "url('img/home-slides/minister.jpg')",
     text: ["Mitmachgemeinde", "Every member is a", "minister."],
     button: {
       children: "Get Involved",

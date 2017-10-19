@@ -13,7 +13,7 @@ const Sidebar = ({ className }) => (
     top: 0,
     left: 0,
     zIndex: theme.baseZIndex * 1000,
-    width: 260,
+    width: theme.sidebarWidth,
     height: "100%",
     transform: "translateX(-260px)",
     transition: ".6s transform ease",
