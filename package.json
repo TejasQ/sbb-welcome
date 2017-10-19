@@ -6,6 +6,7 @@
   "author": "Tejas Kumar <hello@tej.as>",
   "license": "MIT",
   "scripts": {
+    "build": "webpack --env production",
     "test": "jest",
     "start": "webpack-dev-server",
     "lint": "eslint ./src/**/*.{js,jsx} --fix",
@@ -21,6 +22,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "copy-webpack-plugin": "^4.1.1",
     "eslint": "^4.8.0",
     "eslint-config-fbjs": "^2.0.0",
     "eslint-config-prettier": "^2.6.0",
