@@ -47,7 +47,7 @@ const Sidebar = ({ className }) => (
     },
 
     "& .menu__link": {
-      padding: theme.spacing / 2,
+      padding: theme.spacing,
       borderTop: "1px solid rgba(0, 0, 0, 0.2)",
       fontWeight: 600,
       backgroundColor: "rgba(255, 255, 255, 0.2)",

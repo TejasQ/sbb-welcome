@@ -23,8 +23,8 @@ const duration = 600,
     height: "100%",
     display: "flex",
     alignItems: "flex-start",
-    padding: theme.spacing * 6,
-    paddingLeft: theme.sidebarWidth + theme.spacing * 3,
+    padding: theme.spacing * 4,
+    paddingLeft: theme.sidebarWidth + theme.spacing * 4,
     transition: `${duration}ms transform ease, ${duration}ms opacity ease`,
     backgroundImage: backgroundImage || "linear-gradient(45deg, #EFEFF0 0%, #fff 100%)",
     backgroundSize: "cover",
@@ -46,7 +46,8 @@ const duration = 600,
     "& .button": {
       position: "absolute",
       bottom: theme.spacing * 4,
-      right: theme.spacing * 4
+      right: theme.spacing * 4,
+      padding: `${theme.spacing}px ${theme.spacing * 2}px`
     }
   })
 

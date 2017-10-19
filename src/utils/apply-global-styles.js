@@ -22,5 +22,5 @@ export default () => {
   })
 
   css.global("h1, h2, h3, h4, h5, h6, p", { margin: 0 })
-  css.global("h1", { fontWeight: 600 })
+  css.global("h1", { fontWeight: 600, fontSize: 70 })
 }

@@ -23,26 +23,7 @@ const App = ({ className }) => (
     </ThemeProvider>
   ),
   style = () => ({
-    width: "100vw",
-    "@media (min-width: 1024px)": {
-      position: "relative",
-      width: 1024,
-      height: 768,
-      margin: "0 auto",
-      ":after": {
-        content: "''",
-        position: "absolute",
-        top: -59,
-        left: -391,
-        zIndex: -1,
-        width: 1804,
-        height: 898,
-        overflow: "visible",
-        backgroundImage: "url('https://maquette.pro/wp-content/uploads/2016/08/3-22.jpg')",
-        backgroundPosition: "center",
-        backgroundSize: "cover"
-      }
-    }
+    width: "100vw"
   })
 
 export default glamorous(App)(style)
