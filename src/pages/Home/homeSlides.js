@@ -12,7 +12,7 @@ export default [
   },
   {
     id: 3,
-    backgroundImage: "url('/img/home-slides/frisbee.jpg')",
+    backgroundImage: "url('/img/home-slides/community.jpeg')",
     text: [<h1>Church is home.</h1>, <h1>Church is friends.</h1>, <h1>Church is family.</h1>],
     button: {
       children: "See Events",
@@ -20,7 +20,7 @@ export default [
   },
   {
     id: 4,
-    backgroundImage: "url('/img/home-slides/small-group.jpg')",
+    backgroundImage: "url('/img/home-slides/small-group.jpeg')",
     text: [<h1>Church life happens</h1>, <h1>in circles, not in rows.</h1>],
     button: {
       children: "Explore Small Groups",
