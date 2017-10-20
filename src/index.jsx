@@ -4,9 +4,10 @@ import { createStore, combineReducers } from "redux"
 import { Provider } from "react-redux"
 
 import sidebarReducer from "./reducers/sidebarReducer"
+import smallGroupMapReducer from "./reducers/smallGroupMapReducer"
 
 const store = createStore(
-  combineReducers({ sidebar: sidebarReducer }),
+  combineReducers({ sidebar: sidebarReducer, smallGroupMap: smallGroupMapReducer }),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 

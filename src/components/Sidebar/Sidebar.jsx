@@ -17,11 +17,21 @@ const Sidebar = ({ className, compact }) => (
           <div className="menu">
             <Slidy direction="left">
               {[
-                <div className="menu__link">About Saddleback</div>,
-                <div className="menu__link">Small Groups</div>,
-                <div className="menu__link">Ministries</div>,
-                <div className="menu__link">Events</div>,
-                <div className="menu__link">Contact</div>
+                <div key={1} className="menu__link">
+                  About Saddleback
+                </div>,
+                <div key={2} className="menu__link">
+                  Small Groups
+                </div>,
+                <div key={3} className="menu__link">
+                  Ministries
+                </div>,
+                <div key={4} className="menu__link">
+                  Events
+                </div>,
+                <div key={5} className="menu__link">
+                  Contact
+                </div>
               ]}
             </Slidy>
           </div>

@@ -7,7 +7,7 @@ import applyGlobalFonts from "./utils/apply-global-fonts"
 import applyGlobalStyles from "./utils/apply-global-styles"
 
 import Sidebar from "components/Sidebar/Sidebar"
-import Home from "./pages/Home/Home"
+import Home from "./pages/SmallGroups/SmallGroups"
 
 applyGlobalStyles()
 applyGlobalFonts()
