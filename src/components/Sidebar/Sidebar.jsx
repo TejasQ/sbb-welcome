@@ -2,8 +2,12 @@ import React from "react"
 import glamorous from "glamorous"
 import { connect } from "react-redux"
 import { NavLink } from "react-router-dom"
-
 import Transition from "react-transition-group/Transition"
+import InfoIcon from "react-icons/lib/md/info-outline"
+import SmallGroupsIcon from "react-icons/lib/md/home"
+import MinistriesIcon from "react-icons/lib/fa/recycle"
+import EventsIcon from "react-icons/lib/fa/calendar"
+import FeedbackIcon from "react-icons/lib/fa/comments-o"
 
 import Slidy from "components/Slidy/Slidy"
 
@@ -27,22 +31,38 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
               {[
                 <div key={1} className="menu__link">
                   About Saddleback
+                  <div className="menu__icon">
+                    <InfoIcon />
+                  </div>
                 </div>,
                 <NavLink
+                  key={2}
                   activeClassName="menu__link_active"
                   to={`${process.env.WEBPACK_PUBLIC_PATH}small-groups`}
                   className="menu__link"
                 >
-                  <div key={2}>Small Groups</div>
+                  Small Groups
+                  <div className="menu__icon">
+                    <SmallGroupsIcon />
+                  </div>
                 </NavLink>,
                 <div key={3} className="menu__link">
                   Ministries
+                  <div className="menu__icon">
+                    <MinistriesIcon />
+                  </div>
                 </div>,
                 <div key={4} className="menu__link">
                   Events
+                  <div className="menu__icon">
+                    <EventsIcon />
+                  </div>
                 </div>,
                 <div key={5} className="menu__link">
-                  Contact
+                  Feedback
+                  <div className="menu__icon">
+                    <FeedbackIcon />
+                  </div>
                 </div>
               ]}
             </Slidy>
@@ -87,8 +107,10 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
     },
 
     "& .menu__link": {
-      display: "block",
+      display: "flex",
+      alignItems: "center",
       padding: theme.spacing,
+      paddingRight: 21,
       width: "100%",
       borderTop: "1px solid rgba(0, 0, 0, 0.2)",
       fontWeight: 600,
@@ -103,6 +125,11 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
 
     "& .menu__link:active": {
       backgroundColor: "rgba(255, 255, 255, 0.5)"
+    },
+
+    "& .menu__icon": {
+      marginLeft: "auto",
+      fontSize: 19
     }
   })
 
