@@ -1,24 +1,41 @@
 import React from "react"
+import { connect } from "react-redux"
 import glamorous from "glamorous"
 
 import Map from "./Map"
 
-const SmallGroups = () => (
-  <div>
-    <Map
-      isMarkerShown
-      googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-      loadingElement={<div style={{ height: `100%` }} />}
-      containerElement={<div style={{ height: `100%` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
-    />
-  </div>
-)
-
-export default glamorous(SmallGroups)(({ theme }) => ({
-  width: "100vw",
-  height: "100vh",
-  "& .map-marker": {
-    fill: theme.colors.primary
+class SmallGroups extends React.Component {
+  componentDidMount() {
+    this.props.hideSidebar()
   }
-}))
+
+  componentWillUnmount() {
+    this.props.showSidebar()
+  }
+
+  render() {
+    const { className } = this.props
+    return (
+      <div className={`${className} page`}>
+        <Map containerElement={<div style={{ height: `100%` }} />} mapElement={<div style={{ height: `100%` }} />} />}
+        />
+      </div>
+    )
+  }
+}
+
+export default connect(
+  () => ({}),
+  dispatch => ({
+    hideSidebar: () => dispatch({ type: "HIDE_SIDEBAR" }),
+    showSidebar: () => dispatch({ type: "SHOW_SIDEBAR" })
+  })
+)(
+  glamorous(SmallGroups)(({ theme }) => ({
+    width: "100vw",
+    height: "100vh",
+    "& .map-marker": {
+      fill: theme.colors.primary
+    }
+  }))
+)

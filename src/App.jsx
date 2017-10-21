@@ -1,26 +1,33 @@
 import React from "react"
+import { BrowserRouter as Router, Route } from "react-router-dom"
 import glamorous, { ThemeProvider } from "glamorous"
+import { withScriptjs } from "react-google-maps"
 
 import theme from "./theme"
 
 import applyGlobalFonts from "./utils/apply-global-fonts"
 import applyGlobalStyles from "./utils/apply-global-styles"
 
+import withTransition from "components/withTransition/withTransition"
 import Sidebar from "components/Sidebar/Sidebar"
-import Home from "./pages/SmallGroups/SmallGroups"
+import Home from "./pages/Home/Home"
+import SmallGroups from "./pages/SmallGroups/SmallGroups"
 
 applyGlobalStyles()
 applyGlobalFonts()
 
 const App = ({ className }) => (
-    <ThemeProvider theme={theme}>
-      <div className={className}>
-        <Sidebar />
-        <div className="content">
-          <Home />
+    <Router>
+      <ThemeProvider theme={theme}>
+        <div className={className}>
+          <Sidebar />
+          <div className="content">
+            <Route exact path="/" component={withTransition(Home)} />
+            <Route exact path="/small-groups" component={withTransition(SmallGroups)} />
+          </div>
         </div>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Router>
   ),
   style = () => ({
     width: "100vw",
@@ -33,4 +40,4 @@ const App = ({ className }) => (
     }
   })
 
-export default glamorous(App)(style)
+export default glamorous(withScriptjs(App))(style)

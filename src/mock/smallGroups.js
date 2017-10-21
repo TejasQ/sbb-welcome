@@ -24,6 +24,8 @@ export default [
   },
   {
     id: 2,
+    picture:
+      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-0/p206x206/13731522_1278466105519376_826281906951933773_n.jpg?oh=17a3aa4ee70244d365e79f7304ee9992&oe=5A798031",
     host: {
       name: "Tinne Vanhoof",
       email: "nina@sych.com",
@@ -64,6 +66,8 @@ export default [
   },
   {
     id: 4,
+    picture:
+      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-0/p206x206/13245457_10208640922396525_927484168174032448_n.jpg?oh=75656d42a3edefb41b827eda96a031bf&oe=5A627E7B",
     host: {
       name: "Carsten & Linda Koch",
       email: "nina@sych.com",
@@ -84,6 +88,8 @@ export default [
   },
   {
     id: 5,
+    picture:
+      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-0/p206x206/11060454_10205866256031600_294436312970558505_n.jpg?oh=d1adf23ded4d12235ae9c5803482048d&oe=5A716CB1",
     host: {
       name: "Malte Koch",
       email: "nina@sych.com",
@@ -104,6 +110,8 @@ export default [
   },
   {
     id: 6,
+    picture:
+      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/12321180_10206110707942083_4471501743699587601_n.jpg?oh=3392fcd46a8791fe31a612f67b9f847c&oe=5A6C8B80",
     host: {
       name: "Detlef & Daniela Heim",
       email: "nina@sych.com",
@@ -144,6 +152,8 @@ export default [
   },
   {
     id: 8,
+    picture:
+      "https://scontent-frx5-1.xx.fbcdn.net/v/t31.0-8/13495638_1093967537329421_8365766208108585450_o.jpg?oh=ce29cd044c8fb627565ea2611eb3f1ea&oe=5A77D1A5",
     host: {
       name: "Anna Esau",
       email: "nina@sych.com",
@@ -164,6 +174,8 @@ export default [
   },
   {
     id: 9,
+    picture:
+      "https://scontent-frx5-1.xx.fbcdn.net/v/t31.0-8/14310282_10157470249640596_2744111813087375163_o.jpg?oh=1a41c2ce4ed89374d0474ece0355c119&oe=5A6536BC",
     host: {
       name: "Chaonan Zhang",
       email: "nina@sych.com",
@@ -184,6 +196,8 @@ export default [
   },
   {
     id: 10,
+    picture:
+      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/13174010_10154206458294577_4823047690669462970_n.jpg?oh=2f6be96b418597dee771257baec889b1&oe=5A7A1155",
     host: {
       name: "Rob & Natascha Tepaß",
       email: "nina@sych.com",
@@ -204,6 +218,8 @@ export default [
   },
   {
     id: 11,
+    picture:
+      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/13901326_10208536721527469_7711448948101168272_n.jpg?oh=00b10cd1aaebeb1ffa72c3b344d11c8e&oe=5A6FDB1C",
     host: {
       name: "Kevin & Rita Miller",
       email: "nina@sych.com",
@@ -224,6 +240,8 @@ export default [
   },
   {
     id: 12,
+    picture:
+      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/12342718_10153489408224355_7311901398275531115_n.jpg?oh=6d2260d858be39d1d406870344838611&oe=5A82DD53",
     host: {
       name: "Jamayne & Gemma Cameron",
       email: "nina@sych.com",
@@ -264,6 +282,8 @@ export default [
   },
   {
     id: 14,
+    picture:
+      "https://scontent-frx5-1.xx.fbcdn.net/v/l/t1.0-9/13239972_651874018441_9142470680016761751_n.jpg?oh=8384b9460298f2e33cfb3fd0a97decfe&oe=5A67D7D0",
     host: {
       name: "Mike & Jess Corman",
       email: "nina@sych.com",

@@ -15,7 +15,10 @@ import App from "./App"
 
 hydrate(
   <Provider store={store}>
-    <App />
+    <App
+      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLbCMRfUwHsVvjf0MbhP1QuAfpj-hMexM&v=3.exp&libraries=geometry,drawing,places"
+      loadingElement={<div style={{ height: `100%` }} />}
+    />
   </Provider>,
   document.querySelector("#app")
 )

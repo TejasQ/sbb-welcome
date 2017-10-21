@@ -22,7 +22,7 @@ class HomePage extends React.Component {
   render() {
     const { className } = this.props
     return (
-      <div className={className}>
+      <div className={`${className} page`}>
         {homeSlides.map((slide, index) => (
           <HomeSlide
             key={slide.id}

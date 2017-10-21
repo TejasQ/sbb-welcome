@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, OverlayView } from "react-google-maps"
+import { withGoogleMap, GoogleMap, Marker, OverlayView } from "react-google-maps"
 import { Transition } from "react-transition-group"
 
 import InfoWindow from "./InfoWindow"
@@ -8,7 +8,7 @@ import data from "../../mock/smallGroups"
 
 import mapOptions from "./map.options"
 
-const Map = withGoogleMap(({ infoWindow, updateInfoWindow }) => (
+const Map = ({ infoWindow, updateInfoWindow }) => (
   <GoogleMap options={mapOptions} defaultZoom={mapOptions.defaultZoom} defaultCenter={mapOptions.defaultCenter}>
     {
       <OverlayView
@@ -21,9 +21,10 @@ const Map = withGoogleMap(({ infoWindow, updateInfoWindow }) => (
       >
         <Transition
           mountOnEnter={true}
+          unmountOnExit={true}
           in={infoWindow && infoWindow.hasOwnProperty("host")}
           appear={true}
-          timeout={600}
+          timeout={300}
         >
           {animationState => <InfoWindow className={animationState} {...infoWindow} />}
         </Transition>
@@ -39,11 +40,9 @@ const Map = withGoogleMap(({ infoWindow, updateInfoWindow }) => (
       />
     ))}
   </GoogleMap>
-))
-
-export default withScriptjs(
-  connect(
-    ({ smallGroupMap }) => ({ ...smallGroupMap }),
-    dispatch => ({ updateInfoWindow: info => dispatch({ type: "UPDATE_MAP_INFO_WINDOW", info }) })
-  )(Map)
 )
+
+export default connect(
+  ({ smallGroupMap }) => ({ ...smallGroupMap }),
+  dispatch => ({ updateInfoWindow: info => dispatch({ type: "UPDATE_MAP_INFO_WINDOW", info }) })
+)(withGoogleMap(Map))

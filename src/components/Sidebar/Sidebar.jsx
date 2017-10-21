@@ -1,28 +1,36 @@
 import React from "react"
 import glamorous from "glamorous"
 import { connect } from "react-redux"
+import { NavLink } from "react-router-dom"
 
 import Transition from "react-transition-group/Transition"
 
 import Slidy from "components/Slidy/Slidy"
 
-const Sidebar = ({ className, compact }) => (
+const Sidebar = ({ className, compact, toggleSidebar }) => (
     <Transition in={true} appear={true} timeout={600}>
       {animationState => (
-        <div className={`${className} ${animationState}${compact ? " compact" : ""}`}>
-          <div className="logo">
-            <img alt="Saddleback" src="/img/logo.png" />
-          </div>
+        <div
+          role="menubar"
+          tabIndex={-1}
+          onClick={() => toggleSidebar()}
+          className={`${className} ${animationState}${compact ? " compact" : ""}`}
+        >
+          <NavLink to="/">
+            <div className="logo">
+              <img alt="Saddleback" src="/img/logo.png" />
+            </div>
+          </NavLink>
 
           <div className="menu">
-            <Slidy direction="left">
+            <Slidy onClick={event => event.stopPropagation()} direction="left">
               {[
                 <div key={1} className="menu__link">
                   About Saddleback
                 </div>,
-                <div key={2} className="menu__link">
-                  Small Groups
-                </div>,
+                <NavLink activeClassName="menu__link_active" to="/small-groups" className="menu__link">
+                  <div key={2}>Small Groups</div>
+                </NavLink>,
                 <div key={3} className="menu__link">
                   Ministries
                 </div>,
@@ -51,6 +59,10 @@ const Sidebar = ({ className, compact }) => (
     background: "rgba(0, 0, 0, 0.2)",
     WebkitBackdropFilter: "blur(80px) saturate(150%) brightness(130%)",
 
+    "& a": {
+      textDecoration: "none"
+    },
+
     "&.entered": {
       transform: "none"
     },
@@ -71,12 +83,18 @@ const Sidebar = ({ className, compact }) => (
     },
 
     "& .menu__link": {
+      display: "block",
       padding: theme.spacing,
+      width: "100%",
       borderTop: "1px solid rgba(0, 0, 0, 0.2)",
       fontWeight: 600,
-      transition: "background-color .15s ease",
+      transition: "background-color .15s ease, text-shadow .3s ease, color .3s ease",
       backgroundColor: "rgba(255, 255, 255, 0.2)",
       color: "white"
+    },
+
+    "& .menu__link_active": {
+      backgroundColor: "rgba(0, 0, 0, 0.1)"
     },
 
     "& .menu__link:active": {
@@ -84,4 +102,7 @@ const Sidebar = ({ className, compact }) => (
     }
   })
 
-export default connect(({ sidebar }) => ({ ...sidebar }))(glamorous(Sidebar)(styles))
+export default connect(
+  ({ sidebar }) => ({ ...sidebar }),
+  dispatch => ({ toggleSidebar: () => dispatch({ type: "TOGGLE_SIDEBAR" }) })
+)(glamorous(Sidebar)(styles))

@@ -5,12 +5,13 @@ import { resetTransform } from "utils/animations"
 import errors from "./Slidy.errors.js"
 
 const defaultDuration = 1,
-  Slidy = ({ duration = defaultDuration, direction = "up", className, children }) => {
+  Slidy = ({ tabIndex = -1, duration = defaultDuration, direction = "up", className, children, onClick }) => {
     if (!Array.isArray(children)) {
       throw new Error(errors.weirdData)
     }
     return (
-      <div className={className}>
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+      <div className={className} onClick={onClick} role="list" tabIndex={tabIndex}>
         {children.map((element, index) => {
           const Element = () => element
           return (
