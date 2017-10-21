@@ -42,6 +42,7 @@ find . ! -name keys.enc ! -name dist ! -name .git ! -name . -maxdepth 1 -exec rm
 cwd=`pwd`
 cp -a "${cwd}/dist"/. "${cwd}"
 rm -rf dist
+cp index.html 404.html # react-router woooo
 
 git config user.name "Travis Kumar"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
