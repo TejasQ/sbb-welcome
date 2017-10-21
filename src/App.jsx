@@ -22,8 +22,12 @@ const App = ({ className }) => (
         <div className={className}>
           <Sidebar />
           <div className="content">
-            <Route exact path="/" component={withTransition(Home)} />
-            <Route exact path="/small-groups" component={withTransition(SmallGroups)} />
+            <Route exact path={`${process.env.WEBPACK_PUBLIC_PATH}`} component={withTransition(Home)} />
+            <Route
+              exact
+              path={`${process.env.WEBPACK_PUBLIC_PATH}small-groups`}
+              component={withTransition(SmallGroups)}
+            />
           </div>
         </div>
       </ThemeProvider>
@@ -35,9 +39,9 @@ const App = ({ className }) => (
       fontWeight: 600,
       fontSize: 50,
       "@media (min-width: 1366px)": {
-        fontSize: 70
-      }
-    }
+        fontSize: 70,
+      },
+    },
   })
 
 export default glamorous(withScriptjs(App))(style)

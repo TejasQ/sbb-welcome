@@ -8,7 +8,8 @@
   "scripts": {
     "build": "webpack --env production",
     "test": "jest",
-    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server",
+    "start": "node server.js",
     "lint": "eslint ./src/**/*.{js,jsx} --fix",
     "prettier": "prettier ./src/**/*.{js,jsx} --write",
     "precommit": "npm run lint && npm run prettier && npm run test && git add ."

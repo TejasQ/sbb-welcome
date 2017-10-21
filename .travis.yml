@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+- stable
+
+script: bash ./deploy.sh
+env:
+  global:
+  - ENCRYPTION_LABEL: "14a905a50f00"
+  - COMMIT_AUTHOR_EMAIL: "tejas@tejas.qa"
+  - WEBPACK_PUBLIC_PATH: "/sbb-welcome/"
