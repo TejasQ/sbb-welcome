@@ -31,7 +31,7 @@ const duration = 600,
     display: "flex",
     alignItems: "flex-start",
     padding: theme.spacing * 4,
-    paddingLeft: theme.sidebarWidth + theme.spacing * 4,
+    paddingLeft: window.innerWidth <= 414 ? 96 : `calc(var(--sidebar__width) + ${theme.spacing * 4}px)`,
     transition: `${duration}ms transform ease, ${duration}ms opacity ease`,
     backgroundImage: backgroundImage || "linear-gradient(45deg, #EFEFF0 0%, #fff 100%)",
     backgroundSize: "cover",
@@ -49,6 +49,10 @@ const duration = 600,
       fontSize: 26,
       lineHeight: 1,
       fontWeight: 300
+    },
+    "& h1": {
+      "word-wrap": "break-word",
+      hyphens: "auto"
     },
     "& .button": {
       position: "absolute",

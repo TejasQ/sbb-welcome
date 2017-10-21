@@ -56,7 +56,7 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
     top: 0,
     left: 0,
     zIndex: theme.baseZIndex * 1000,
-    width: theme.sidebarWidth,
+    width: "var(--sidebar__width)",
     height: "100%",
     transform: "translateX(-260px)",
     transition: ".6s transform ease",
