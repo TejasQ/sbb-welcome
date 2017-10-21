@@ -35,8 +35,9 @@ export default connect(
     width: "100vw",
     height: "100vh",
     "& .map-marker-container": {
-      transform: "translateY(-100vh)",
-      transition: ".6s transform ease"
+      transform: "scale(0)",
+      transformOrigin: "center bottom",
+      transition: "transform 0.3s cubic-bezier(0.48, 0.49, 0.67, 1.93)"
     },
     "& .map-marker-container.entered": {
       transform: "none"

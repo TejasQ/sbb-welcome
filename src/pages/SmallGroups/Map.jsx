@@ -46,7 +46,7 @@ const Map = ({ infoWindow, updateInfoWindow }) => (
         position={{ lat: smallGroup.location.lat, lng: smallGroup.location.lng }}
         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
       >
-        <Transition appear={true} timeout={1000} in={true}>
+        <Transition appear={true} timeout={600} in={true}>
           {animationState => (
             <div style={{ position: "relative" }}>
               {/* The almight marker */}

@@ -1,6 +1,7 @@
 import React from "react"
 import Transition from "react-transition-group/Transition"
 import glamorous from "glamorous"
+import { Link } from "react-router-dom"
 
 import Slidy from "components/Slidy/Slidy"
 import TimedButton from "components/TimedButton/TimedButton"
@@ -11,7 +12,13 @@ const duration = 600,
       {animationStatus => (
         <div className={`${className} ${animationStatus}`}>
           <Slidy className="text">{children}</Slidy>
-          <TimedButton className="button" color="white" {...button} />
+          {button.link ? (
+            <Link to={button.link}>
+              <TimedButton className="button" color="white" {...button} />
+            </Link>
+          ) : (
+            <TimedButton className="button" color="white" {...button} />
+          )}
         </div>
       )}
     </Transition>
@@ -47,7 +54,8 @@ const duration = 600,
       position: "absolute",
       bottom: theme.spacing * 4,
       right: theme.spacing * 4,
-      padding: `${theme.spacing}px ${theme.spacing * 2}px`
+      padding: `${theme.spacing}px ${theme.spacing * 2}px`,
+      color: "white"
     }
   })
 
