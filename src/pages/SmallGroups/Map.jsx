@@ -16,7 +16,7 @@ const Map = ({ infoWindow, updateInfoWindow }) => (
         mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
         getPixelPositionOffset={(width, height) => ({
           x: -(width / 2),
-          y: -(height + 40)
+          y: -(height + 40),
         })}
       >
         <Transition
@@ -35,7 +35,7 @@ const Map = ({ infoWindow, updateInfoWindow }) => (
         key={smallGroup.id}
         onClick={() => updateInfoWindow(smallGroup)}
         className="map-marker"
-        icon="/img/small-groups/marker.svg"
+        icon={`${process.env.WEBPACK_PUBLIC_PATH}img/small-groups/marker.svg`}
         position={{ lat: smallGroup.location.lat, lng: smallGroup.location.lng }}
       />
     ))}
@@ -44,5 +44,5 @@ const Map = ({ infoWindow, updateInfoWindow }) => (
 
 export default connect(
   ({ smallGroupMap }) => ({ ...smallGroupMap }),
-  dispatch => ({ updateInfoWindow: info => dispatch({ type: "UPDATE_MAP_INFO_WINDOW", info }) })
+  dispatch => ({ updateInfoWindow: info => dispatch({ type: "UPDATE_MAP_INFO_WINDOW", info }) }),
 )(withGoogleMap(Map))
