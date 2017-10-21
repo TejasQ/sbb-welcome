@@ -9,10 +9,6 @@ class SmallGroups extends React.Component {
     this.props.hideSidebar()
   }
 
-  componentWillUnmount() {
-    this.props.showSidebar()
-  }
-
   render() {
     const { className } = this.props
     return (
