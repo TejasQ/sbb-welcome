@@ -22,7 +22,7 @@ export default [
     backgroundImage: `url('${process.env.WEBPACK_PUBLIC_PATH}img/home-slides/small-group.jpeg')`,
     text: [<h1>Church life happens</h1>, <h1>in circles, not in rows.</h1>],
     button: {
-      link: "/small-groups",
+      link: `${process.env.WEBPACK_PUBLIC_PATH}small-groups`,
       children: "Explore Small Groups"
     }
   },
