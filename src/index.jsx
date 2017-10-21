@@ -5,10 +5,15 @@ import { Provider } from "react-redux"
 
 import sidebarReducer from "./reducers/sidebarReducer"
 import smallGroupMapReducer from "./reducers/smallGroupMapReducer"
+import smallGroupProspectivesReducer from "./reducers/smallGroupProspectivesReducer"
 
 const store = createStore(
-  combineReducers({ sidebar: sidebarReducer, smallGroupMap: smallGroupMapReducer }),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  combineReducers({
+    sidebar: sidebarReducer,
+    smallGroupMap: smallGroupMapReducer,
+    smallGroupProspectives: smallGroupProspectivesReducer,
+  }),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 )
 
 import App from "./App"
@@ -20,5 +25,5 @@ hydrate(
       loadingElement={<div style={{ height: `100%` }} />}
     />
   </Provider>,
-  document.querySelector("#app")
+  document.querySelector("#app"),
 )
