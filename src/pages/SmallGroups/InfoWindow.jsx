@@ -9,7 +9,7 @@ class InfoWindow extends React.Component {
     name: "",
     email: "",
     isFormActive: false,
-    askedToJoin: false,
+    askedToJoin: false
   }
 
   updateForm(field, value) {
@@ -40,17 +40,17 @@ class InfoWindow extends React.Component {
 
   render() {
     const {
-      className,
-      host = {},
-      title,
-      meetings = {},
-      location = {},
-      // ageGroup,
-      // peopleGroup,
-      picture,
-      updateInfoWindow,
-    } = this.props
-    const heading = title || host.name
+        className,
+        host = {},
+        title,
+        meetings = {},
+        location = {},
+        // ageGroup,
+        // peopleGroup,
+        picture,
+        updateInfoWindow
+      } = this.props,
+      heading = title || host.name
 
     return (
       <div className={`${className}`}>
@@ -112,6 +112,6 @@ export default connect(
   () => ({}),
   dispatch => ({
     updateInfoWindow: () => dispatch({ type: "UPDATE_MAP_INFO_WINDOW" }),
-    askToJoin: prospective => dispatch({ type: "ADD_SMALL_GROUP_PROSPECTIVE", prospective }),
-  }),
+    askToJoin: prospective => dispatch({ type: "ADD_SMALL_GROUP_PROSPECTIVE", prospective })
+  })
 )(glamorous(InfoWindow)(style))

@@ -5,7 +5,7 @@ export default (state = JSON.parse(localStorage.getItem("sbb-sg-prospects")) || 
       if (
         state.filter(
           prospective =>
-            prospective.email === action.prospective.email && prospective.host.name === action.prospective.host.name,
+            prospective.email === action.prospective.email && prospective.host.name === action.prospective.host.name
         ).length
       ) {
         // Do nothing.

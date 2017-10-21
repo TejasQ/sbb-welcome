@@ -28,28 +28,28 @@ export default connect(
   () => ({}),
   dispatch => ({
     hideSidebar: () => dispatch({ type: "HIDE_SIDEBAR" }),
-    showSidebar: () => dispatch({ type: "SHOW_SIDEBAR" }),
-  }),
+    showSidebar: () => dispatch({ type: "SHOW_SIDEBAR" })
+  })
 )(
   glamorous(SmallGroups)(({ theme }) => ({
     width: "100vw",
     height: "100vh",
     "& .map-marker-container": {
       transform: "translateY(-100vh)",
-      transition: ".6s transform ease",
+      transition: ".6s transform ease"
     },
     "& .map-marker-container.entered": {
-      transform: "none",
+      transform: "none"
     },
     "& .map-marker": {
-      fill: theme.colors.darkOrange,
+      fill: theme.colors.darkOrange
     },
     "& .map-marker__pulse": {
       position: "absolute",
       top: 13,
       left: -4,
       zIndex: -1,
-      borderColor: theme.colors.darkOrange,
-    },
-  })),
+      borderColor: theme.colors.darkOrange
+    }
+  }))
 )

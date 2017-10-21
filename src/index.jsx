@@ -11,9 +11,9 @@ const store = createStore(
   combineReducers({
     sidebar: sidebarReducer,
     smallGroupMap: smallGroupMapReducer,
-    smallGroupProspectives: smallGroupProspectivesReducer,
+    smallGroupProspectives: smallGroupProspectivesReducer
   }),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
 import App from "./App"
@@ -25,5 +25,5 @@ hydrate(
       loadingElement={<div style={{ height: `100%` }} />}
     />
   </Provider>,
-  document.querySelector("#app"),
+  document.querySelector("#app")
 )

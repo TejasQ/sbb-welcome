@@ -43,7 +43,7 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
                 </div>,
                 <div key={5} className="menu__link">
                   Contact
-                </div>,
+                </div>
               ]}
             </Slidy>
           </div>
@@ -64,26 +64,26 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
     WebkitBackdropFilter: "blur(80px) saturate(150%) brightness(130%)",
 
     "& a": {
-      textDecoration: "none",
+      textDecoration: "none"
     },
 
     "&.entered": {
-      transform: "none",
+      transform: "none"
     },
 
     "&.compact": {
-      transform: `translateX(${(theme.sidebarWidth - 60) * -1}px)`,
+      transform: `translateX(${(theme.sidebarWidth - 60) * -1}px)`
     },
 
     "& .logo img": {
       display: "block",
       margin: "100px auto",
       maxWidth: 75,
-      transition: "transform .6s ease",
+      transition: "transform .6s ease"
     },
 
     "&.compact .logo img": {
-      transform: `scale(0.5) translateX(${theme.sidebarWidth - 60}px)`,
+      transform: `scale(0.5) translateX(${theme.sidebarWidth - 60}px)`
     },
 
     "& .menu__link": {
@@ -94,19 +94,19 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
       fontWeight: 600,
       transition: "background-color .15s ease, text-shadow .3s ease, color .3s ease",
       backgroundColor: "rgba(255, 255, 255, 0.2)",
-      color: "white",
+      color: "white"
     },
 
     "& .menu__link_active": {
-      backgroundColor: "rgba(0, 0, 0, 0.1)",
+      backgroundColor: "rgba(0, 0, 0, 0.1)"
     },
 
     "& .menu__link:active": {
-      backgroundColor: "rgba(255, 255, 255, 0.5)",
-    },
+      backgroundColor: "rgba(255, 255, 255, 0.5)"
+    }
   })
 
 export default connect(
   ({ sidebar }) => ({ ...sidebar }),
-  dispatch => ({ toggleSidebar: () => dispatch({ type: "TOGGLE_SIDEBAR" }) }),
+  dispatch => ({ toggleSidebar: () => dispatch({ type: "TOGGLE_SIDEBAR" }) })
 )(glamorous(Sidebar)(styles))

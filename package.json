@@ -10,9 +10,11 @@
     "test": "jest",
     "dev": "webpack-dev-server",
     "start": "node server.js",
-    "lint": "eslint index.js $(git diff --name-only | grep '\\(js\\|jsx\\)$') --fix",
-    "prettier": "prettier $(git diff --name-only | grep '\\(js\\|jsx\\)$') --write",
-    "precommit": "npm run lint && npm run prettier && npm run test && git add ."
+    "lint": "eslint ./src/**/*.{js,jsx} --fix",
+    "prettier": "prettier ./src/**/*.{js,jsx} --write",
+    "lint:diff": "eslint index.js $(git diff --cached --name-only | grep '\\(js\\|jsx\\)$') --fix",
+    "prettier:diff": "prettier $(git diff --cached --name-only | grep '\\(js\\|jsx\\)$') --write",
+    "precommit": "npm run test && npm run lint:diff && npm run prettier:diff && git add ."
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

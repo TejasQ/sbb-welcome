@@ -39,9 +39,9 @@ const App = ({ className }) => (
       fontWeight: 600,
       fontSize: 50,
       "@media (min-width: 1366px)": {
-        fontSize: 70,
-      },
-    },
+        fontSize: 70
+      }
+    }
   })
 
 export default glamorous(withScriptjs(App))(style)

@@ -1994,7 +1994,7 @@ eslint-config-fbjs@^2.0.0:
 
 eslint-config-prettier@^2.6.0:
   version "2.6.0"
-  resolved "https://registry.npmjs.org/eslint-config-prettier/-/eslint-config-prettier-2.6.0.tgz#f21db0ebb438ad678fb98946097c4bb198befccc"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-2.6.0.tgz#f21db0ebb438ad678fb98946097c4bb198befccc"
   dependencies:
     get-stdin "^5.0.1"
 

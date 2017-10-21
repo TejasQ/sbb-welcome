@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-import { withGoogleMap, GoogleMap, Marker, OverlayView } from "react-google-maps"
+import { withGoogleMap, GoogleMap, OverlayView } from "react-google-maps"
 import { Transition } from "react-transition-group"
 
 import InfoWindow from "./InfoWindow"
@@ -18,7 +18,7 @@ const Map = ({ infoWindow, updateInfoWindow }) => (
         mapPaneName={OverlayView.FLOAT_PANE}
         getPixelPositionOffset={(width, height) => ({
           x: -(width / 2),
-          y: -(height + 40),
+          y: -(height + 40)
         })}
       >
         <Transition
@@ -51,7 +51,7 @@ const Map = ({ infoWindow, updateInfoWindow }) => (
             <div style={{ position: "relative" }}>
               {/* The almight marker */}
               <svg
-                onClick={e => updateInfoWindow(smallGroup)}
+                onClick={() => updateInfoWindow(smallGroup)}
                 className={`map-marker-container ${animationState}`}
                 style={{ transitionDelay: `${index / 16}s` }}
                 height="40px"
@@ -78,5 +78,5 @@ const Map = ({ infoWindow, updateInfoWindow }) => (
 
 export default connect(
   ({ smallGroupMap }) => ({ ...smallGroupMap }),
-  dispatch => ({ updateInfoWindow: info => dispatch({ type: "UPDATE_MAP_INFO_WINDOW", info }) }),
+  dispatch => ({ updateInfoWindow: info => dispatch({ type: "UPDATE_MAP_INFO_WINDOW", info }) })
 )(withGoogleMap(Map))
