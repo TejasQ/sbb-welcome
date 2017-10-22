@@ -1,7 +1,7 @@
 import React from "react"
 
 import glamorous from "glamorous"
-
+import EventImage from "./EventImage"
 
 class EventsPage extends React.Component {
   constructor(props) {
@@ -24,11 +24,8 @@ class EventsPage extends React.Component {
       });
        FB.getLoginStatus( function(response) {
         if (response.status === 'connected') {
-          console.log('Logged in.', response);
-            FB.api('/SaddlebackBerlin/events', async function(response) {
-            console.log('getting events for Saddleback', response);
-           await this.setState({events: response.data});
-
+            FB.api('/SaddlebackBerlin/events',  function(response) {
+            this.setState({events: response.data});
           }.bind(this));
         }
         else {
@@ -56,18 +53,14 @@ class EventsPage extends React.Component {
 
 
   render() {
-
-    const { allEvents } = this.state;
-    console.log(allEvents)
-    console.log('from render',this.state.events)
     const { events } = this.state;
-    
-
     let eventList = events.map((event, index) => {
       return (
           <div style={{ display: 'flex', 'padding-bottom': '10px', }}>
             <div style={{flex: '1 0 700px', 'padding-right': '15px', }}>
-              <img style={{maxWidth: '100%'}} src='http://clubofthewaves.com/wp-content/uploads/mayumi-tsubokura-surf-artist.jpg' /> 
+              <EventImage
+                event={event}>
+              </EventImage>
             </div>
             <div style={{flex: '2 0 auto'}}>
               <h2>
