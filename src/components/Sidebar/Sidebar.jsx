@@ -34,9 +34,9 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
                 <div key={3} className="menu__link">
                   Ministries
                 </div>,
-                <div key={4} className="menu__link">
-                  Events
-                </div>,
+                <NavLink activeClassName="menu__link_active" to="/events" className="menu__link">
+                  <div key={4} >Events</div>
+                </NavLink>,
                 <div key={5} className="menu__link">
                   Contact
                 </div>

@@ -12,6 +12,7 @@ import withTransition from "components/withTransition/withTransition"
 import Sidebar from "components/Sidebar/Sidebar"
 import Home from "./pages/Home/Home"
 import SmallGroups from "./pages/SmallGroups/SmallGroups"
+import EventsPage from "./pages/Events/EventsPage"
 
 applyGlobalStyles()
 applyGlobalFonts()
@@ -24,6 +25,7 @@ const App = ({ className }) => (
           <div className="content">
             <Route exact path="/" component={withTransition(Home)} />
             <Route exact path="/small-groups" component={withTransition(SmallGroups)} />
+            <Route exact path="/events" component={withTransition(EventsPage)} />
           </div>
         </div>
       </ThemeProvider>
