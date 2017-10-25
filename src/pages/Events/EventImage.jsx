@@ -13,14 +13,14 @@ class EventImage extends React.Component {
  	}
 
  	componentWillMount() {
- 		FB.api(`/${this.props.event.id}/picture?type=large&redirect=0&square=false`,  function(response) {
+ 		FB.api(`/${this.props.event.id}/picture?type=large&redirect=0&square=true`,  function(response) {
             this.setState({imageUrl: response.data.url});
           }.bind(this));
  	}
 
  	render() {
       	return (
-      		<img style={{maxWidth: '100%'}}  src={this.state.imageUrl}/>
+      		<img style={{maxWidth: '100%', width: '700px'}}  src={this.state.imageUrl}/>
       		)
 	}
 }

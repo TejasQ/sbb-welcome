@@ -13,47 +13,31 @@ class EventsPage extends React.Component {
 
   }
 
-    componentWillMount() {
-
-     window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '478225382330396',
-        cookie     : true, 
-        xfbml      : true,
-        version    : 'v2.1'
-      });
-       FB.getLoginStatus( function(response) {
-        if (response.status === 'connected') {
-            FB.api('/SaddlebackBerlin/events',  function(response) {
-            this.setState({events: response.data});
-          }.bind(this));
-        }
-        else {
-          FB.login();
-        }
-      }.bind(this));
-
-    }.bind(this);
-
-
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    
+  componentWillMount() {
+    FB.getLoginStatus( function(response) {
+      if (response.status === 'connected') {
+          FB.api('/SaddlebackBerlin/events',  function(response) {
+          this.setState({events: response.data});
+        }.bind(this));
+      }
+      else {
+        FB.login();
+      }
+    }.bind(this));
   }
-
-  componentWillUnmount() {
-
-  }
-  
-
 
   render() {
     const { events } = this.state;
+
+    let friendlyDate = (date) => {
+      const DateOptions = {  
+          weekday: "long", year: "numeric", month: "short",  
+          day: "numeric", hour: "2-digit", minute: "2-digit"  
+      }
+      let formedDate = new Date(Date.parse(date))
+      return formedDate.toLocaleTimeString("en", DateOptions)
+    }
+
     let eventList = events.map((event, index) => {
       return (
           <div style={{ display: 'flex', 'padding-bottom': '10px', }}>
@@ -62,17 +46,18 @@ class EventsPage extends React.Component {
                 event={event}>
               </EventImage>
             </div>
-            <div style={{flex: '2 0 auto'}}>
-              <h2>
+            <div style={{flex: '2 0 initial', 'margin-top': '100', 'margin-right': '100'}}>
+              <h2 style={{'font-size': 70, 'text-align': 'right',}}>
                 {event.name}
               </h2>
-              {event.start_time}
-              <span >
+              <p>{friendlyDate(event.start_time)}</p>
+              <p >
               {event.description}
-              </span>
+              </p>
             </div>
           </div>
-        )})
+    )})
+
     
     const { className } = this.props
     return (

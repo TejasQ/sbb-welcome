@@ -3,8 +3,30 @@
     <title>Welcome to SBB</title>
     <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <script>
+
+    </script>
   </head>
   <body>
+	  <script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '478225382330396',
+        cookie     : true, 
+        xfbml      : true,
+        version    : 'v2.1'
+	    });
+	    FB.AppEvents.logPageView();
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "https://connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
     <div id="app"></div>
   </body>
 </html>
