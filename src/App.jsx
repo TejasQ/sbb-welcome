@@ -12,6 +12,7 @@ import withTransition from "components/withTransition/withTransition"
 import Sidebar from "components/Sidebar/Sidebar"
 import Home from "./pages/Home/Home"
 import SmallGroups from "./pages/SmallGroups/SmallGroups"
+import EventsPage from "./pages/Events/EventsPage"
 
 applyGlobalStyles()
 applyGlobalFonts()
@@ -28,6 +29,8 @@ const App = ({ className }) => (
               path={`${process.env.WEBPACK_PUBLIC_PATH}small-groups`}
               component={withTransition(SmallGroups)}
             />
+            <Route exact path={`${process.env.WEBPACK_PUBLIC_PATH}events`} 
+            component={withTransition(EventsPage)} />
           </div>
         </div>
       </ThemeProvider>

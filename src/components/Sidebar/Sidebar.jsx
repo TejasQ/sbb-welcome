@@ -52,12 +52,12 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
                     <MinistriesIcon />
                   </div>
                 </div>,
-                <div key={4} className="menu__link">
+                <NavLink key={4} activeClassName="menu__link_active" to="/events" className="menu__link">
                   Events
                   <div className="menu__icon">
                     <EventsIcon />
                   </div>
-                </div>,
+                </NavLink>,
                 <div key={5} className="menu__link">
                   Feedback
                   <div className="menu__icon">
@@ -72,7 +72,7 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
     </Transition>
   ),
   styles = ({ theme }) => ({
-    position: "absolute",
+    position: "sticky",
     top: 0,
     left: 0,
     zIndex: theme.baseZIndex * 1000,

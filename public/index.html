@@ -15,6 +15,25 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon-180x180.png" />
   </head>
   <body>
+	  <script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '478225382330396',
+        cookie     : true, 
+        xfbml      : true,
+        version    : 'v2.1'
+	    });
+	    FB.AppEvents.logPageView();
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "https://connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
     <div id="app"></div>
   </body>
 </html>
