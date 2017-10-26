@@ -2,6 +2,7 @@ import React from "react"
 
 import glamorous from "glamorous"
 import EventImage from "./EventImage"
+import EventAddress from "./EventAddress"
 
 class EventsPage extends React.Component {
   constructor(props) {
@@ -14,16 +15,18 @@ class EventsPage extends React.Component {
   }
 
   componentWillMount() {
-    FB.getLoginStatus( function(response) {
-      if (response.status === 'connected') {
-          FB.api('/SaddlebackBerlin/events',  function(response) {
-          this.setState({events: response.data});
-        }.bind(this));
-      }
-      else {
-        FB.login();
-      }
-    }.bind(this));
+    if (FB) {
+      FB.getLoginStatus( function(response) {
+        if (response.status === 'connected') {
+            FB.api('/SaddlebackBerlin/events',  function(response) {
+            this.setState({events: response.data});
+          }.bind(this));
+        }
+        else {
+          FB.login();
+        }
+      }.bind(this));
+    }
   }
 
   render() {
@@ -50,10 +53,10 @@ class EventsPage extends React.Component {
               <h2 style={{'font-size': 70, 'text-align': 'right',}}>
                 {event.name}
               </h2>
-              <p>{friendlyDate(event.start_time)}</p>
-              <p >
-              {event.description}
+              <p style={{'font-size': 30, 'text-align': 'right',}}>
+                {friendlyDate(event.start_time)}
               </p>
+              { event.place.location ? <EventAddress place={event.place}> </EventAddress> : '' }
             </div>
           </div>
     )})
