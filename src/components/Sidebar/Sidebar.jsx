@@ -35,7 +35,7 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
                   Ministries
                 </div>,
                 <NavLink activeClassName="menu__link_active" to="/events" className="menu__link">
-                  <div key={4} >Events</div>
+                  <div key={4}>Events</div>
                 </NavLink>,
                 <div key={5} className="menu__link">
                   Contact
@@ -48,7 +48,6 @@ const Sidebar = ({ className, compact, toggleSidebar }) => (
     </Transition>
   ),
   styles = ({ theme }) => ({
-    position: "-webkit-sticky",
     position: "sticky",
     top: 0,
     left: 0,
