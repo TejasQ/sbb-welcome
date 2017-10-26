@@ -9,10 +9,6 @@ class SmallGroups extends React.Component {
     this.props.hideSidebar()
   }
 
-  componentWillUnmount() {
-    this.props.showSidebar()
-  }
-
   render() {
     const { className } = this.props
     return (
@@ -34,8 +30,23 @@ export default connect(
   glamorous(SmallGroups)(({ theme }) => ({
     width: "100vw",
     height: "100vh",
+    "& .map-marker-container": {
+      transform: "scale(0)",
+      transformOrigin: "center bottom",
+      transition: "transform 0.3s cubic-bezier(0.48, 0.49, 0.67, 1.93)"
+    },
+    "& .map-marker-container.entered": {
+      transform: "none"
+    },
     "& .map-marker": {
-      fill: theme.colors.primary
+      fill: theme.colors.darkOrange
+    },
+    "& .map-marker__pulse": {
+      position: "absolute",
+      top: 13,
+      left: -4,
+      zIndex: -1,
+      borderColor: theme.colors.darkOrange
     }
   }))
 )

@@ -2,18 +2,56 @@ import React from "react"
 import { connect } from "react-redux"
 import glamorous from "glamorous"
 
-const InfoWindow = ({
-    className,
-    host = {},
-    title,
-    meetings = {},
-    location = {},
-    // ageGroup,
-    // peopleGroup,
-    picture,
-    updateInfoWindow
-  }) => {
-    const heading = title || host.name
+import style from "./InfoWindow.style"
+
+class InfoWindow extends React.Component {
+  state = {
+    name: "",
+    email: "",
+    isFormActive: false,
+    askedToJoin: false
+  }
+
+  updateForm(field, value) {
+    this.setState(() => ({ [field]: value }))
+  }
+
+  showForm() {
+    this.setState(() => ({ isFormActive: true }))
+  }
+
+  hideForm() {
+    this.setState(() => ({ isFormActive: false }))
+  }
+
+  /*
+    This guy decides whether to show the form,
+    or to actually submit the request.
+  */
+  askToJoin() {
+    if (this.state.isFormActive) {
+      this.props.askToJoin({ name: this.state.name, email: this.state.email, host: this.props.host })
+      this.setState(() => ({ askedToJoin: true }))
+      return
+    }
+
+    this.setState(() => ({ isFormActive: true }))
+  }
+
+  render() {
+    const {
+        className,
+        host = {},
+        title,
+        meetings = {},
+        location = {},
+        // ageGroup,
+        // peopleGroup,
+        picture,
+        updateInfoWindow
+      } = this.props,
+      heading = title || host.name
+
     return (
       <div className={`${className}`}>
         {picture && (
@@ -27,8 +65,39 @@ const InfoWindow = ({
           <h3>
             {meetings.day}, {meetings.time}
           </h3>
+
+          {/* This is the form that people see when they click ASK TO JOIN */}
+          <div className={`content__body${!this.state.askedToJoin && this.state.isFormActive ? " active" : ""}`}>
+            <input
+              onClick={e => e.target.focus()} // hack for iPad
+              onChange={e => this.updateForm("name", e.target.value)}
+              type="text"
+              placeholder="Your Name..."
+              value={this.state.name}
+            />
+            <input
+              onClick={e => e.target.focus()} // hack for iPad
+              onChange={e => this.updateForm("email", e.target.value)}
+              type="text"
+              placeholder="Your Email..."
+              value={this.state.email}
+            />
+          </div>
+
+          {/* This is the confirmation that people see after */}
+          <div className={`content__body feedback${this.state.askedToJoin ? " active" : ""}`}>
+            Thank you for checking out this small group. We have taken the necessary steps to get the ball rolling.
+          </div>
+
+          {/* Hello buttons */}
           <div className="actions">
-            <button className="join">Ask to Join</button>
+            <button
+              disabled={this.state.askedToJoin}
+              className={`join${!this.state.askedToJoin && this.state.isFormActive ? " fill" : ""}`}
+              onClick={() => this.askToJoin()}
+            >
+              {this.state.askedToJoin ? "Host Contacted!" : "Ask to Join"}
+            </button>
             <button onClick={() => updateInfoWindow()} className="close">
               Close
             </button>
@@ -36,77 +105,13 @@ const InfoWindow = ({
         </div>
       </div>
     )
-  },
-  style = ({ theme }) => ({
-    padding: 0,
-    width: 280,
-    boxShadow: "0 16px 90px rgba(0, 0, 0, 0.3)",
-    transition: ".3s transform ease, .3s opacity ease",
-    opacity: 0,
-    transform: `translateY(${theme.spacing}px)`,
-    WebkitBackdropFilter: "blur(6px) saturate(90%) brightness(100%)",
-    background: "rgba(255, 255, 255, .75)",
-    "&.entering": {
-      opacity: 0,
-      transform: `translateY(${theme.spacing}px)`
-    },
-
-    "&.entered": {
-      opacity: 1,
-      transform: "none"
-    },
-
-    "& img": {
-      maxWidth: "100% !important"
-    },
-
-    "& .content": {
-      padding: theme.spacing
-    },
-
-    "& h1": {
-      fontSize: 20,
-      color: "#555",
-      fontWeight: 600
-    },
-
-    "& h2": {
-      fontWeight: 100,
-      fontSize: 14,
-      marginTop: 9
-    },
-    "& h3": {
-      fontWeight: 400,
-      marginTop: theme.spacing / 2,
-      fontSize: 14,
-      color: "#777"
-    },
-    "& .actions": {
-      display: "flex"
-    },
-    "& button": {
-      marginTop: 24,
-      width: "100%",
-      background: "transparent",
-      border: 0,
-      padding: theme.spacing,
-      fontSize: 14,
-      fontWeight: 600
-    },
-    "& button.join": {
-      flex: "2 1 auto",
-      marginRight: theme.spacing / 2,
-      border: `2px solid ${theme.colors.primary}`,
-      color: theme.colors.primary
-    },
-    "& button.close": {
-      flex: "1 2 auto",
-      border: `2px solid ${theme.colors.red}`,
-      color: theme.colors.red
-    }
-  })
+  }
+}
 
 export default connect(
   () => ({}),
-  dispatch => ({ updateInfoWindow: () => dispatch({ type: "UPDATE_MAP_INFO_WINDOW" }) })
+  dispatch => ({
+    updateInfoWindow: () => dispatch({ type: "UPDATE_MAP_INFO_WINDOW" }),
+    askToJoin: prospective => dispatch({ type: "ADD_SMALL_GROUP_PROSPECTIVE", prospective })
+  })
 )(glamorous(InfoWindow)(style))

@@ -1,4 +1,6 @@
-export default (state = { compact: false }, action) => {
+import config from "config"
+
+export default (state = { compact: window.innerWidth <= config.breakpoints.iphone6Plus }, action) => {
   switch (action.type) {
     case "TOGGLE_SIDEBAR":
       return { ...state, compact: !state.compact }

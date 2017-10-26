@@ -1,4 +1,5 @@
 import { css } from "glamor"
+import theme from "../theme"
 
 export default () => {
   css.global("html, body", {
@@ -31,4 +32,6 @@ export default () => {
   css.global(".page.entering", { opacity: 0, transform: "translateY(50px)" })
   css.global(".page.exiting", { opacity: 0, transform: "translateY(50px)" })
   css.global(".page.entered", { transform: "none", opacity: 1 })
+
+  css.global(":root", { "--sidebar__width": `${theme.sidebarWidth}px` })
 }

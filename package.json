@@ -12,7 +12,9 @@
     "start": "node server.js",
     "lint": "eslint ./src/**/*.{js,jsx} --fix",
     "prettier": "prettier ./src/**/*.{js,jsx} --write",
-    "precommit": "npm run lint && npm run prettier && npm run test && git add ."
+    "lint:diff": "eslint index.js $(git diff --cached --name-only | grep '\\(js\\|jsx\\)$') --fix",
+    "prettier:diff": "prettier $(git diff --cached --name-only | grep '\\(js\\|jsx\\)$') --write",
+    "precommit": "npm run test && npm run lint:diff && npm run prettier:diff && git add ."
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -53,6 +55,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-google-maps": "^9.0.1",
+    "react-icons": "^2.2.7",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
