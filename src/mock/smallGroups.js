@@ -15,51 +15,9 @@ export default [
       time: "7:30AM"
     },
     location: {
-      lat: 52.531684,
-      lng: 13.382672,
-      label: "Mitte"
-    },
-    ageGroup: "Mixed",
-    peopleGroup: "Men and Women"
-  },
-  {
-    id: 2,
-    picture:
-      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-0/p206x206/13731522_1278466105519376_826281906951933773_n.jpg?oh=17a3aa4ee70244d365e79f7304ee9992&oe=5A798031",
-    host: {
-      name: "Tinne Vanhoof",
-      email: "nina@sych.com",
-      phone: "+4191919191"
-    },
-    language: "English",
-    meetings: {
-      day: "Tuesdays",
-      time: "7:00PM"
-    },
-    location: {
-      lat: 52.517421,
-      lng: 13.294927,
-      label: "Charlottenburg"
-    },
-    ageGroup: "Mixed",
-    peopleGroup: "Men and Women"
-  },
-  {
-    id: 3,
-    host: {
-      name: "Scott & Jessica Amis",
-      email: "nina@sych.com",
-      phone: "+4191919191"
-    },
-    language: "English",
-    meetings: {
-      day: "Wednesdays",
-      time: "6:00PM"
-    },
-    location: {
-      lat: 52.555671,
-      lng: 13.325293,
-      label: "Wedding"
+      lat: 52.5202894,
+      lng: 13.386977600000023,
+      label: "Flamingos Friedrichstraße"
     },
     ageGroup: "Mixed",
     peopleGroup: "Men and Women"
@@ -79,33 +37,11 @@ export default [
       time: "7:00PM"
     },
     location: {
-      lat: 52.386033,
-      lng: 13.06964,
-      label: "Potsdam"
+      lat: 52.3977796,
+      lng: 13.052930599999968,
+      label: "Dortusstr"
     },
     ageGroup: "Mixed",
-    peopleGroup: "Men and Women"
-  },
-  {
-    id: 5,
-    picture:
-      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-0/p206x206/11060454_10205866256031600_294436312970558505_n.jpg?oh=d1adf23ded4d12235ae9c5803482048d&oe=5A716CB1",
-    host: {
-      name: "Malte Koch",
-      email: "nina@sych.com",
-      phone: "+4191919191"
-    },
-    language: "German",
-    meetings: {
-      day: "Wednesdays",
-      time: "7:00PM"
-    },
-    location: {
-      lat: 52.381633,
-      lng: 13.047667,
-      label: "Potsdam"
-    },
-    ageGroup: "Youth",
     peopleGroup: "Men and Women"
   },
   {
@@ -123,17 +59,117 @@ export default [
       time: "7:30PM"
     },
     location: {
-      lat: 52.468855,
-      lng: 13.325076,
-      label: "Friedenau"
+      lat: 52.4790084,
+      lng: 13.328917100000012,
+      label: "U Bundesplatz"
     },
     ageGroup: "Mixed",
     peopleGroup: "Men and Women"
   },
   {
-    id: 7,
+    id: 17,
     host: {
-      name: "Jannet & Frank Herfert",
+      name: "Anke Köppen",
+      email: "nina@sych.com",
+      phone: "+4191919191"
+    },
+    language: "English",
+    meetings: {
+      day: "Thursdays",
+      time: "7PM"
+    },
+    location: {
+      lat: 52.5023038,
+      lng: 13.531355899999994,
+      label: "U Tierpark"
+    },
+    ageGroup: "Mixed",
+    peopleGroup: "Men and Women"
+  },
+  {
+    id: 18,
+    host: {
+      name: "Lisa Pippus",
+      email: "nina@sych.com",
+      phone: "+4191919191"
+    },
+    language: "English",
+    meetings: {
+      day: "Thursdays",
+      time: "7PM"
+    },
+    location: {
+      lat: 52.5254106,
+      lng: 13.34110510000005,
+      label: "U Turmstrasse"
+    },
+    ageGroup: "Mixed",
+    peopleGroup: "Men and Women"
+  },
+  {
+    id: 19,
+    host: {
+      name: "Marcus & Christina Young",
+      email: "nina@sych.com",
+      phone: "+4191919191"
+    },
+    language: "English",
+    meetings: {
+      day: "Thursdays",
+      time: "7:30PM"
+    },
+    location: {
+      lat: 52.55502749999999,
+      lng: 13.39776519999998,
+      label: "S Bornholmer, S Schönhauser Allee"
+    },
+    ageGroup: "Mixed",
+    peopleGroup: "Men and Women"
+  },
+  {
+    id: 20,
+    host: {
+      name: "Lea Artemov",
+      email: "nina@sych.com",
+      phone: "+4191919191"
+    },
+    language: "English",
+    meetings: {
+      day: "Thursdays",
+      time: "7PM"
+    },
+    location: {
+      lat: 52.509419,
+      lng: 13.497189700000035,
+      label: "S+U Lichtenberg"
+    },
+    ageGroup: "Mixed",
+    peopleGroup: "Women only"
+  },
+  {
+    id: 21,
+    host: {
+      name: "Heather Welch",
+      email: "nina@sych.com",
+      phone: "+4191919191"
+    },
+    language: "English",
+    meetings: {
+      day: "Wednesdays",
+      time: "7PM"
+    },
+    location: {
+      lat: 52.5171812,
+      lng: 13.306603499999937,
+      label: "U Richard-Wagner Platz"
+    },
+    ageGroup: "Mixed",
+    peopleGroup: "Men and Women"
+  },
+  {
+    id: 22,
+    host: {
+      name: "Laura Schmidt",
       email: "nina@sych.com",
       phone: "+4191919191"
     },
@@ -143,53 +179,53 @@ export default [
       time: "7:30PM"
     },
     location: {
-      lat: 52.566582,
-      lng: 13.403415,
-      label: "Pankow"
+      lat: 52.55502749999999,
+      lng: 13.39776519999998,
+      label: "S Bornholmer Straße, U Vinetastraße"
     },
     ageGroup: "Mixed",
     peopleGroup: "Men and Women"
   },
   {
-    id: 8,
+    id: 23,
     picture:
-      "https://scontent-frx5-1.xx.fbcdn.net/v/t31.0-8/13495638_1093967537329421_8365766208108585450_o.jpg?oh=ce29cd044c8fb627565ea2611eb3f1ea&oe=5A77D1A5",
+      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/12321180_10206110707942083_4471501743699587601_n.jpg?oh=3392fcd46a8791fe31a612f67b9f847c&oe=5A6C8B80",
     host: {
-      name: "Anna Esau",
-      email: "nina@sych.com",
-      phone: "+4191919191"
-    },
-    language: "German",
-    meetings: {
-      day: "Thursdays",
-      time: "7:00PM"
-    },
-    location: {
-      lat: 52.521756,
-      lng: 13.304454,
-      label: "Charlottenburg"
-    },
-    ageGroup: "Mixed",
-    peopleGroup: "Men and Women"
-  },
-  {
-    id: 9,
-    picture:
-      "https://scontent-frx5-1.xx.fbcdn.net/v/t31.0-8/14310282_10157470249640596_2744111813087375163_o.jpg?oh=1a41c2ce4ed89374d0474ece0355c119&oe=5A6536BC",
-    host: {
-      name: "Chaonan Zhang",
+      name: "Victoria Heim",
       email: "nina@sych.com",
       phone: "+4191919191"
     },
     language: "English",
     meetings: {
       day: "Thursdays",
+      time: "7PM"
+    },
+    location: {
+      lat: 52.4790084,
+      lng: 13.328917100000012,
+      label: "U Bundesplatz"
+    },
+    ageGroup: "Mixed",
+    peopleGroup: "Men and Women"
+  },
+  {
+    id: 24,
+    picture:
+      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/12321180_10206110707942083_4471501743699587601_n.jpg?oh=3392fcd46a8791fe31a612f67b9f847c&oe=5A6C8B80",
+    host: {
+      name: "Melanie Hultsch & Jessica Gierlichs",
+      email: "nina@sych.com",
+      phone: "+4191919191"
+    },
+    language: "English",
+    meetings: {
+      day: "Wednesdays",
       time: "7:30PM"
     },
     location: {
-      lat: 52.549774,
-      lng: 13.343747,
-      label: "Wedding"
+      lat: 52.54172089999999,
+      lng: 13.412197699999979,
+      label: "U Eberswalde Straße"
     },
     ageGroup: "Mixed",
     peopleGroup: "Men and Women"
@@ -206,12 +242,12 @@ export default [
     language: "English",
     meetings: {
       day: "Thursdays",
-      time: "7:30PM"
+      time: "7PM"
     },
     location: {
-      lat: 52.475514,
-      lng: 13.362194,
-      label: "Schöneberg"
+      lat: 52.489529,
+      lng: 13.350275900000042,
+      label: "U Eisenacher Straße"
     },
     ageGroup: "Mixed",
     peopleGroup: "Men and Women"
@@ -227,57 +263,15 @@ export default [
     },
     language: "English",
     meetings: {
-      day: "Thursdays",
-      time: "7:30PM"
+      day: "Tuesdays",
+      time: "7PM"
     },
     location: {
-      lat: 52.447866,
-      lng: 13.326821,
-      label: "Steglitz"
+      lat: 52.4674434,
+      lng: 13.309639500000003,
+      label: "U Breitenbachplatz"
     },
     ageGroup: "Mixed",
-    peopleGroup: "Men and Women"
-  },
-  {
-    id: 12,
-    picture:
-      "https://scontent-frx5-1.xx.fbcdn.net/v/t1.0-9/12342718_10153489408224355_7311901398275531115_n.jpg?oh=6d2260d858be39d1d406870344838611&oe=5A82DD53",
-    host: {
-      name: "Jamayne & Gemma Cameron",
-      email: "nina@sych.com",
-      phone: "+4191919191"
-    },
-    language: "English",
-    meetings: {
-      day: "Thursdays",
-      time: "8PM"
-    },
-    location: {
-      lat: 52.575554,
-      lng: 13.471737,
-      label: "Pankow"
-    },
-    ageGroup: "Mixed",
-    peopleGroup: "Men and Women"
-  },
-  {
-    id: 13,
-    host: {
-      name: "Dalton Setzer",
-      email: "nina@sych.com",
-      phone: "+4191919191"
-    },
-    language: "English",
-    meetings: {
-      day: "Fridays",
-      time: "4PM"
-    },
-    location: {
-      lat: 52.47716,
-      lng: 13.317649,
-      label: "Wilmersdorf"
-    },
-    ageGroup: "Kids",
     peopleGroup: "Men and Women"
   },
   {
@@ -292,12 +286,12 @@ export default [
     language: "English",
     meetings: {
       day: "Thursdays",
-      time: "8PM"
+      time: "7PM"
     },
     location: {
-      lat: 52.419226,
-      lng: 13.260089,
-      label: "Zehlendorf"
+      lat: 52.431054,
+      lng: 13.258499400000005,
+      label: "S Zehlendorf"
     },
     ageGroup: "Mixed",
     peopleGroup: "Men and Women"
@@ -315,29 +309,9 @@ export default [
       time: "8PM"
     },
     location: {
-      lat: 52.507392,
-      lng: 13.300077,
-      label: "Charlottenburg"
-    },
-    ageGroup: "Mixed",
-    peopleGroup: "Men and Women"
-  },
-  {
-    id: 16,
-    host: {
-      name: "Katrin Bossman",
-      email: "nina@sych.com",
-      phone: "+4191919191"
-    },
-    language: "German",
-    meetings: {
-      day: "Fridays",
-      time: "6:30PM"
-    },
-    location: {
-      lat: 52.494169,
-      lng: 13.410409,
-      label: "Kreuzberg"
+      lat: 52.50006810000001,
+      lng: 13.307357899999943,
+      label: "U Adenauerplatz"
     },
     ageGroup: "Mixed",
     peopleGroup: "Men and Women"
