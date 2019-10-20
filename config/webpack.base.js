@@ -4,38 +4,38 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 module.exports = {
   entry: ["regenerator-runtime/runtime", resolve(__dirname, "../src/index.jsx")],
   output: {
-    publicPath: "/",
+    publicPath: "/sbb-welcome/",
     path: resolve(__dirname, "..", "dist"),
-    filename: "[name].[hash].js",
+    filename: "[name].[hash].js"
   },
   module: {
     rules: [
       {
         test: /\.(js|jsx)/,
         loader: "babel-loader",
-        exclude: /node_modules/,
+        exclude: /node_modules/
       },
       {
         test: /\.(png|eot|svg|ttf|woff|woff2)$/,
         use: {
           loader: "file-loader",
           options: {
-            name: "[path][name].[ext]",
-          },
-        },
-      },
-    ],
+            name: "[path][name].[ext]"
+          }
+        }
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve(__dirname, "..", "public", "index.html"),
-    }),
+      template: resolve(__dirname, "..", "public", "index.html")
+    })
   ],
   resolve: {
     extensions: [".jsx", ".js"],
     alias: {
       components: resolve(__dirname, "../src/components"),
-      utils: resolve(__dirname, "../src/utils"),
-    },
-  },
+      utils: resolve(__dirname, "../src/utils")
+    }
+  }
 }
