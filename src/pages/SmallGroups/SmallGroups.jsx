@@ -4,6 +4,12 @@ import glamorous from "glamorous"
 
 import Map from "./Map"
 
+const Container = glamorous("div")({
+  height: "100vh",
+
+  " > div": { height: "100vh" }
+})
+
 class SmallGroups extends React.Component {
   componentDidMount() {
     this.props.hideSidebar()
@@ -16,10 +22,9 @@ class SmallGroups extends React.Component {
   render() {
     const { className } = this.props
     return (
-      <div className={`${className} page`}>
-        <Map containerElement={<div style={{ height: `100%` }} />} mapElement={<div style={{ height: `100%` }} />} />}
-        />
-      </div>
+      <Container className={`${className} page`}>
+        <Map />
+      </Container>
     )
   }
 }

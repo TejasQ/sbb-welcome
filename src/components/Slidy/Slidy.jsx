@@ -16,7 +16,7 @@ const defaultDuration = 1,
           const Element = () => element
           return (
             <div key={index} className="Slidy">
-              <div className={`Slidy_${direction}`} style={{ animationDelay: `${index * duration / 2}s` }}>
+              <div className={`Slidy_${direction}`} style={{ animationDelay: `${(index * duration) / 2}s` }}>
                 {<Element />}
               </div>
             </div>

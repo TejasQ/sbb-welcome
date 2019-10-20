@@ -11,11 +11,10 @@ class HomePage extends React.Component {
   }
 
   updateActiveHomeSlide() {
-    this.setState(
-      prevState =>
-        this.state.activeHomeSlide === homeSlides.length - 1
-          ? { activeHomeSlide: 0 }
-          : { activeHomeSlide: prevState.activeHomeSlide + 1 }
+    this.setState(prevState =>
+      this.state.activeHomeSlide === homeSlides.length - 1
+        ? { activeHomeSlide: 0 }
+        : { activeHomeSlide: prevState.activeHomeSlide + 1 }
     )
   }
 

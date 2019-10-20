@@ -50,9 +50,11 @@
   "dependencies": {
     "glamor": "^2.20.40",
     "glamorous": "^4.9.7",
+    "leaflet": "^1.5.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-google-maps": "^9.0.1",
+    "react-leaflet": "^2.5.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",

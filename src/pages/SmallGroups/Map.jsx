@@ -1,48 +1,62 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
-import { withGoogleMap, GoogleMap, Marker, OverlayView } from "react-google-maps"
-import { Transition } from "react-transition-group"
+import { withLeaflet, Map, Marker, Popup, TileLayer } from "react-leaflet"
 
-import InfoWindow from "./InfoWindow"
-import data from "../../mock/smallGroups"
+// eslint-disable-next-line one-var
+const getCoordinates = location =>
+  fetch(`https://open.mapquestapi.com/geocoding/v1/address?key=he0HiFZ52rHFWabYCpGK1IiRMwfaTNFj&location=${location}`)
+    .then(r => r.json())
+    .then(r => r.results.map(r => [r.locations[0].latLng.lat, r.locations[0].latLng.lng]))
+    .then(r => r[0])
 
-import mapOptions from "./map.options"
+// eslint-disable-next-line one-var
+const MapComponent = () => {
+  const [groups, setGroups] = useState([])
 
-const Map = ({ infoWindow, updateInfoWindow }) => (
-  <GoogleMap options={mapOptions} defaultZoom={mapOptions.defaultZoom} defaultCenter={mapOptions.defaultCenter}>
-    {
-      <OverlayView
-        position={infoWindow ? infoWindow.location : { lat: 0, lng: 0 }}
-        mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-        getPixelPositionOffset={(width, height) => ({
-          x: -(width / 2),
-          y: -(height + 40)
-        })}
-      >
-        <Transition
-          mountOnEnter={true}
-          unmountOnExit={true}
-          in={infoWindow && infoWindow.hasOwnProperty("host")}
-          appear={true}
-          timeout={300}
-        >
-          {animationState => <InfoWindow className={animationState} {...infoWindow} />}
-        </Transition>
-      </OverlayView>
-    }
-    {data.map(smallGroup => (
-      <Marker
-        key={smallGroup.id}
-        onClick={() => updateInfoWindow(smallGroup)}
-        className="map-marker"
-        icon="/img/small-groups/marker.svg"
-        position={{ lat: smallGroup.location.lat, lng: smallGroup.location.lng }}
+  useEffect(() => {
+    let fields
+    fetch("https://api.airtable.com/v0/appiV7B0SM0E5LGOV/Imported%20table", {
+      headers: { Authorization: "Bearer keyxNf2vSywCLSypi" }
+    })
+      .then(a => a.json())
+      .then(g => {
+        fields = g.records.map(r => ({ ...r.fields })).filter(r => Boolean(r.Host))
+      })
+      .then(() => {
+        return Promise.all(
+          fields.map(async field => {
+            const coords = await getCoordinates(field.Location)
+            field.coords = coords
+          })
+        )
+      })
+      .then(() => setGroups(fields))
+  }, [])
+
+  // console.log(groups)
+
+  return (
+    <Map center={[52.520008, 13.404954]} zoom={11}>
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       />
-    ))}
-  </GoogleMap>
-)
+      {groups.map(g => (
+        <Marker position={g.coords}>
+          <Popup>
+            <h1>{g.Host}</h1>
+            <h2>
+              {g.Day} @ {g.Time}
+            </h2>
+            <h3>{g.Location}</h3>
+          </Popup>
+        </Marker>
+      ))}
+    </Map>
+  )
+}
 
 export default connect(
   ({ smallGroupMap }) => ({ ...smallGroupMap }),
   dispatch => ({ updateInfoWindow: info => dispatch({ type: "UPDATE_MAP_INFO_WINDOW", info }) })
-)(withGoogleMap(Map))
+)(withLeaflet(MapComponent))
