@@ -77199,77 +77199,77 @@ exports.default = function () {
     fontFamily: "SBbody",
     fontStyle: "normal",
     fontWeight: 400,
-    src: "url(\"/fonts/lato/lato.ttf\")"
+    src: "url(\"/sbb-welcome/fonts/lato/lato.ttf\")"
   });
 
   _glamor.css.fontFace({
     fontFamily: "SBbody",
     fontStyle: "normal",
     fontWeight: 700,
-    src: "url(\"/fonts/lato/lato__black.ttf\")"
+    src: "url(\"/sbb-welcome/fonts/lato/lato__black.ttf\")"
   });
 
   _glamor.css.fontFace({
     fontFamily: "SBbody",
     fontStyle: "italic",
     fontWeight: 700,
-    src: "url(\"/fonts/lato/lato__black-italic.ttf\")"
+    src: "url(\"/sbb-welcome/fonts/lato/lato__black-italic.ttf\")"
   });
 
   _glamor.css.fontFace({
     fontFamily: "SBbody",
     fontStyle: "normal",
     fontWeight: 600,
-    src: "url(\"/fonts/lato/lato__bold.ttf\")"
+    src: "url(\"/sbb-welcome/fonts/lato/lato__bold.ttf\")"
   });
 
   _glamor.css.fontFace({
     fontFamily: "SBbody",
     fontStyle: "italic",
     fontWeight: 600,
-    src: "url(\"/fonts/lato/lato__bold-italic.ttf\")"
+    src: "url(\"/sbb-welcome/fonts/lato/lato__bold-italic.ttf\")"
   });
 
   _glamor.css.fontFace({
     fontFamily: "SBbody",
     fontStyle: "normal",
     fontWeight: 300,
-    src: "url(\"/fonts/lato/lato__light.ttf\")"
+    src: "url(\"/sbb-welcome/fonts/lato/lato__light.ttf\")"
   });
 
   _glamor.css.fontFace({
     fontFamily: "SBserif",
     fontStyle: "normal",
     fontWeight: 400,
-    src: "url(\"/fonts/pt-serif/pt-serif.ttf\")"
+    src: "url(\"/sbb-welcome/fonts/pt-serif/pt-serif.ttf\")"
   });
 
   _glamor.css.fontFace({
     fontFamily: "SBserif",
     fontStyle: "italic",
     fontWeight: 400,
-    src: "url(\"/fonts/pt-serif/pt-serif__italic.ttf\")"
+    src: "url(\"/sbb-welcome/fonts/pt-serif/pt-serif__italic.ttf\")"
   });
 
   _glamor.css.fontFace({
     fontFamily: "SBserif",
     fontStyle: "normal",
     fontWeight: 700,
-    src: "url(\"/fonts/pt-serif/pt-serif__bold.ttf\")"
+    src: "url(\"/sbb-welcome/fonts/pt-serif/pt-serif__bold.ttf\")"
   });
 
   _glamor.css.fontFace({
     fontFamily: "SBserif",
     fontStyle: "italic",
     fontWeight: 700,
-    src: "url(\"/fonts/pt-serif/pt-serif__bold-italic.ttf\")"
+    src: "url(\"/sbb-welcome/fonts/pt-serif/pt-serif__bold-italic.ttf\")"
   });
 
   _glamor.css.fontFace({
     fontFamily: "SBtitle",
     fontStyle: "normal",
     fontWeight: 400,
-    src: "url(\"/fonts/akzidenz/akzidenz.otf\")"
+    src: "url(\"/sbb-welcome/fonts/akzidenz/akzidenz.otf\")"
   });
 };
 
@@ -78203,7 +78203,7 @@ var Sidebar = function Sidebar(_ref) {
           _react2.default.createElement(
             "div",
             { className: "logo" },
-            _react2.default.createElement("img", { alt: "Saddleback", src: "/img/logo.png" })
+            _react2.default.createElement("img", { alt: "Saddleback", src: "/sbb-welcome/img/logo.png" })
           )
         ),
         _react2.default.createElement(
@@ -78567,7 +78567,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = [{
   id: 1,
-  backgroundImage: "url('/img/home-slides/berlin.jpg')",
+  backgroundImage: "url('/sbb-welcome/img/home-slides/berlin.jpg')",
   text: [_react2.default.createElement(
     "h1",
     null,
@@ -78586,7 +78586,7 @@ exports.default = [{
   }
 }, {
   id: 3,
-  backgroundImage: "url('/img/home-slides/community.jpeg')",
+  backgroundImage: "url('/sbb-welcome/img/home-slides/community.jpeg')",
   text: [_react2.default.createElement(
     "h1",
     null,
@@ -78605,7 +78605,7 @@ exports.default = [{
   }
 }, {
   id: 4,
-  backgroundImage: "url('/img/home-slides/small-group.jpeg')",
+  backgroundImage: "url('/sbb-welcome/img/home-slides/small-group.jpeg')",
   text: [_react2.default.createElement(
     "h1",
     null,
